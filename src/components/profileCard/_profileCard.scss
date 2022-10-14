@@ -1,0 +1,89 @@
+.profileCard {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 1.5rem;
+    gap: 1rem;
+    overflow-x: clip;
+    background: #282828;
+    
+    hr{
+        width: 83%;
+        border: none;
+        height: 1px;
+        background: #47454582;
+        
+    }
+    .profileImg {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .profileImg > img:nth-of-type(1) {
+        width: 100%;
+    }
+    .profileImg > img:nth-of-type(2) {
+        width: 6rem;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -3rem;
+    }
+    .profileName {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 13px;
+        gap: 10px;
+    }
+    .profileName > span:nth-of-type(1) {
+        font-weight: bold;
+    }
+    .followStatus {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    .followStatus > div {
+        display: flex;
+        gap: 8rem;
+        width: 80;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .follow {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        align-items: center;
+        justify-content: center;
+    }
+    .follow > span:nth-of-type(1) {
+        font-weight: bold;
+    }
+    .follow > span:nth-of-type(2) {
+        font-size: 10px;
+        color: rgb(97, 97, 97);
+    }
+
+    .span {
+        font-weight: bold;
+        color: orange;
+        align-self: center;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        background: rgb(48, 47, 47);;
+        width: 202px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        align-content: flex-end;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 15%;
+    }
+}

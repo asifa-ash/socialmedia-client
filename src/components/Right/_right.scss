@@ -1,0 +1,24 @@
+.right{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    margin-top: 55px;
+.navIcon{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.navIcon>img{
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: brightness(2) hue-rotate(50deg);
+}
+.r-button{
+    height: 3rem;
+    width: 80%;
+    align-self: center;
+
+}
+
+
+}

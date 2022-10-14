@@ -1,0 +1,63 @@
+@use './page/Home/home.scss';
+ @use './components/Profile-side/profileSide';
+ @use './components/LogoSearch/logosearch.scss';
+ @use './components/profileCard/profileCard';
+ @use './components/FollowersCard/followCard';
+  @use './components/Post/postSide'; 
+  @use './components/PostShare/postShare';
+ @use './components/MyPosts/myPosts';
+ @use './components/MyPost/myPost';
+ @use './components/Right/right';
+ @use './page/Profile/profile';
+ @use './components/ProfileLeft/profileLeft';
+ @use './components/TrendCard/trendCard';
+ @use './components/InfoCard/infoCard';
+ @use './page/Auth/auth';
+
+@use './components/ProfileModel/pfofileModel';
+
+  $yellow: #f5c32c;
+  $orange: #fca61f;
+  $black: #242d49;
+  $gray: rgba(36, 45, 73, 0.65);
+  $profileShadow: 0px 4px 17px 2px rgba(0, 0, 0, 0.25);
+  $hrColor: #cfcdcd;
+  $cardColor: rgba(255, 255, 255, 0.64);
+  $buttonBg: linear-gradient(98.63deg, #f9a225 0%, #f95f35 100%);
+  $inputColor: rgba(40, 52, 62, 0.07);
+  $photo: #4CB256;
+  $video: #4A4EB7;
+  $location: #EF5757;
+  
+$shedule: #E1AE4A;
+
+body,.App{
+  font-family: "inter";
+  margin: 0;
+ 
+  background-color:#1a1a1a !important;
+  color: #e0d8d8;
+  padding :1rem 1rem;
+
+}
+.button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:black;
+  border: none;
+  border-radius: 0.5rem;
+  background: #fffd01;
+  transition: all 100ms ease-out;
+
+}
+.button:hover{
+  cursor: pointer;
+  color: orange;
+  background: transparent;
+  border: 2px solid $orange;
+
+}
+::-webkit-scrollbar{
+  display: none;
+}

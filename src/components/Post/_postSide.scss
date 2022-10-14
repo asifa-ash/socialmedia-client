@@ -1,0 +1,20 @@
+.postSide{
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100vh;
+    overflow: auto;
+    .navIcon{
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-around;
+    }
+    .navIcon>img{
+        width: 1rem;
+        height: 1rem;
+        filter: brightness(2) hue-rotate(50deg);
+    }
+    
+
+}
