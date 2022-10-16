@@ -3,15 +3,14 @@ import React, { useState } from "react";
 // import { useDispatch } from "react-redux";
 import { Button, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useNavigation } from "react-router-dom";
-import { loginIn, signUp } from "../../Utils/StoreConfig/reducers";
+import { useNavigate } from "react-router-dom";
+import { logIn, signUp } from "../../Utils/StoreConfig/reducers";
 
 function Auth() {
-  const [IsSignUp, setIsSignUP] = useState(true);
+  const [IsSignUp, setIsSignUP] = useState(false);
   // dispatch
   const dispatch = useDispatch();
-  const select = useSelector((state) => state);
-  let nav = useNavigate;
+  const nav = useNavigate()
 
   const [Data, setData] = useState({
     name: "",
@@ -28,12 +27,13 @@ function Auth() {
     e.preventDefault();
     if (IsSignUp) {
       dispatch(signUp(Data));
-      ;
-      nav('/home');
-      //  setConfirmPass(false);
+
     } else {
-      dispatch(loginIn(Data));
-      nav({to:"/home"});
+      dispatch(logIn(Data));
+      
+
+   
+      
     }
   };
 

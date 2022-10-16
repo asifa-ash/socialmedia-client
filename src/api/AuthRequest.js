@@ -1,16 +1,9 @@
 import axios from "axios";
 
 export function logIn(data) {
-  const iop = axios.post("http://localhost:4000/auth/login", data);
-  console.log(iop)
- 
-  return iop
-  
+  return axios.post("http://localhost:4000/auth/login", data);
 }
 export function signUp(data) {
   
-  
- 
-  return axios.post("http://localhost:4000/auth/register", data);
-
+  axios.post("http://localhost:4000/auth/register", data);
 }

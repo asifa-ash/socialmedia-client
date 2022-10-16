@@ -1,32 +1,38 @@
-import { createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import * as AuthApi from "../../api/AuthRequest";
-import { useDispatch } from "react-redux";
+
+//creating a function for async function which take time
+export const logIn = createAsyncThunk(
+  "userAction/logIn",
+  async (Data) => {
+    try {
+       let response = await AuthApi.logIn(Data);
+       return response;
+    } catch(err) {
+      console.log(err);
+    }
+  }
+   
+);
 
 export const reducers = createSlice({
-  name: "userAction",
+  name: "userAction", //naming for reducer
   initialState: {
-    userData: {},
+    userData: '',
   },
   reducers: {
-    loginIn: (state, action) => {
-      // axios.get(http://localhost:4000/auth/login,action.payload)
-      AuthApi.logIn(action.payload).then((data) => {
-     
-        localStorage.setItem("token", JSON.stringify(data.data.token));
-        console.log(data.data.user)
-        state.userData = { ...data.data.user};
-
-      });
+    signUp(state, action) {
+      AuthApi.signUp(action.payload);
     },
-    signUp: (state, action) => {
-      AuthApi.signUp(action.payload).then((data) => {
-        localStorage.setItem("profile", JSON.stringify(data));
-        console.log(data);
-        state.userData = data;
-      });
-    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(logIn.fulfilled, (state, action) => {
+       
+    })
   },
 });
 
-export const { loginIn, signUp, userData } = reducers.actions;
+
+
+
+export const { signUp } = reducers.actions;
