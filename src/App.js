@@ -5,8 +5,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { React, Route, Navigate, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+
+
 function App() {
-  // const state = useSelector((state) => state.reducer);
+  const state = useSelector((state) => state.reducer);
+  console.log(state);
 
   
 
@@ -16,7 +19,9 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Navigate to={'/auth'}/>} />
+        <Route path="/" element={state.status === 200?<Navigate to={"/home"} />:<Navigate to={"/auth" } />} />
+        <Route path="/auth" element={state.status===200?<Navigate to={"/home"}/>:<Auth/>}/>
+        <Route path="/home" element={state.status===200?<Home/>:<Navigate to={"/auth"}/>} />
       </Routes>
     </>
   );

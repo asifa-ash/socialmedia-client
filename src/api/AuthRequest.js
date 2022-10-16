@@ -5,5 +5,5 @@ export function logIn(data) {
 }
 export function signUp(data) {
   
-  axios.post("http://localhost:4000/auth/register", data);
+  return axios.post("http://localhost:4000/auth/register", data);
 }
