@@ -5,8 +5,8 @@ import profile from '../../img/profileImg.jpg'
 
 function ProfileCard() {
   const profilePage = true;
-  const state = useSelector(state => state.reducer)
-  console.log(state.Auth.name);
+  const state = useSelector(state => state.userReducers)
+
   return (
     <div className="profileCard">
       <div className="profileImg">

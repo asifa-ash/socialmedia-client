@@ -5,6 +5,7 @@ import * as AuthApi from "../../api/AuthRequest";
 export const logIn = createAsyncThunk("userAction/logIn", async (Data) => {
   try {
     let response = await AuthApi.logIn(Data);
+    localStorage.setItem("token", response.data.token);
     return response;
   } catch (err) {
     return err;
@@ -20,14 +21,14 @@ export const signUp = createAsyncThunk("userAction/signUp", async (Data) => {
   }
 });
 
-export const reducers = createSlice({
+const userReducers = createSlice({
   name: "userAction", //naming for reducer
   initialState: {
     Auth: {},
     status: "",
   },
   reducers: {
-    logOut: (state, action) => {
+    logOut(state, action){
       state.Auth = {};
       state.status = 300;
     },
@@ -57,6 +58,5 @@ export const reducers = createSlice({
   },
 });
 
-
-
-export const {logOut} = reducers.actions
+export default userReducers.reducer
+export const { logOut } = userReducers.actions;

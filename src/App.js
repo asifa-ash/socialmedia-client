@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 
 
 function App() {
-  const state = useSelector((state) => state.reducer);
+  const state = useSelector((state) => state.userReducers);
   console.log(state);
 
   

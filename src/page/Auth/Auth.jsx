@@ -4,13 +4,14 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { logIn, signUp } from "../../Utils/StoreConfig/reducers";
+import { logIn, signUp } from "../../Utils/StoreConfig/userReducers";
+
 
 function Auth() {
   const [IsSignUp, setIsSignUP] = useState(false);
   // dispatch
   const dispatch = useDispatch();
-  const nav = useNavigate()
+  const nav = useNavigate();
 
   const [Data, setData] = useState({
     name: "",
@@ -27,13 +28,8 @@ function Auth() {
     e.preventDefault();
     if (IsSignUp) {
       dispatch(signUp(Data));
-
     } else {
       dispatch(logIn(Data));
-      
-
-   
-      
     }
   };
 

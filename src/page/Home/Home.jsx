@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import PostSide from "../../components/Post/PostSide";
 import ProfileSide from "../../components/Profile-side/ProfileSide";
 import Right from "../../components/Right/Right";
-import { logOut } from "../../Utils/StoreConfig/reducers";
 
 function Home() {
   const dispatch = useDispatch()
@@ -21,16 +20,16 @@ function Home() {
     <>
       <Container>
         <div className="Home ">
-          <div>
+          {/* <div>
             {" "}
             <Link to={"/auth"}>Ho Back</Link>
-            <button
+           <button
               className="btn btn-danger"
               onClick={() => dispatch(logOut())}
             >
               LogOut
-            </button>
-          </div>
+            </button> 
+          </div>  */}
           {responsive === "lg" ? <ProfileSide /> : ""}
 
           <PostSide />
