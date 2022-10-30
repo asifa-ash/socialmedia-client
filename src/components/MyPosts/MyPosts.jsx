@@ -10,8 +10,8 @@ function MyPosts() {
 
   const dispatch=useDispatch()
   const user = useSelector(state => state.userReducers)
-  const {posts,loading}=useDispatch(state=>state.postReducers)
-  console.log(user.postReducers.posts,"postanr");
+  const {posts,loading}=useSelector(state=>state.postReducers)
+  console.log(posts);
   
   
 

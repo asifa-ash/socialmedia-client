@@ -7,7 +7,7 @@ import notlike from '../../img/notlike.png'
 function MyPost({data}) {
   return (
     <div className='post'>
-    <img src={data.img} alt="" />
+    <img src={data.image} alt="" />
 
 
 
